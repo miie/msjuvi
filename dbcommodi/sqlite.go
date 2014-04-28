@@ -3,7 +3,7 @@ package dbcommodi
 import (
 	_ "github.com/mattn/go-sqlite3"
 	"database/sql"
-	"../logger"
+	"github.com/miie/msjuvi/logger"
 )
 
 // Get db connection

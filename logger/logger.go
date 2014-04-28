@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"runtime"
 	"path/filepath"
-	"../mailer"
+	"github.com/miie/msjuvi/mailer"
 )
 
 const (

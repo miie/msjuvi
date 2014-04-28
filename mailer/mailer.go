@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/smtp"
 	"github.com/scorredoira/email"
-	//"../logger"
+	//"github.com/miie/msjuvi/logger"
 	"log"
 )
 

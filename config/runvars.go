@@ -5,7 +5,7 @@ import (
 	"sync"
 	"strings"
 	"errors"
-	"../logger"
+	"github.com/miie/msjuvi/logger"
 	"github.com/miie/goconfig"
 )
 

@@ -6,7 +6,7 @@ import (
 	//"fmt"
 	"database/sql"
 	_ "github.com/mattn/go-sqlite3"
-	"../logger"
+	"github.com/miie/msjuvi/logger"
 )
 
 /*1. flytta all till en "db" paket och skapa GetDB för specifika databaser

@@ -6,7 +6,7 @@ import (
 	"crypto/md5"
 	"code.google.com/p/go.crypto/ripemd160"
 	"crypto/sha256"
-	"../logger"
+	"github.com/miie/msjuvi/logger"
 )
 
 func MD5Hash(s string) (string, error) {

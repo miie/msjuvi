@@ -7,9 +7,9 @@ import (
     "crypto/cipher"
     "crypto/rand"
     "encoding/base64"
-    "../logger"
-    "../random"
-    "../hash"
+    "github.com/miie/msjuvi/logger"
+    "github.com/miie/msjuvi/random"
+    "github.com/miie/msjuvi/hash"
 )
 
 // Encrypts text using AES-256 with key. Key can be of arbitrary length (it's md5 hashed).

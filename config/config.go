@@ -1,7 +1,7 @@
 package config
 
 import (
-	"../logger"
+	"github.com/miie/msjuvi/logger"
 	"github.com/miie/goconfig"
 )
 

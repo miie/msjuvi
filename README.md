@@ -1,4 +1,4 @@
 msjuvi
 ======
 
-Collection of tools I use in most Go projects
+Collection of tools I use in many Go projects.

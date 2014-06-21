@@ -13,7 +13,7 @@ func Test0(t *testing.T) {
 		t.Errorf("1. Test0: did not get ok")
 	}
 	if s != "key0str" {
-		t.Errorf("2. Test0: did not get key0str. got: ", s)
+		t.Errorf("2. Test0: did not get key0str. got: %s", s)
 	}
 	fmt.Println("1. key0: ", s)
 

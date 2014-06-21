@@ -2,23 +2,23 @@ package config
 
 import (
 	//"fmt"
-	"sync"
-	"strings"
 	"errors"
-	"github.com/miie/msjuvi/logger"
 	"github.com/miie/goconfig"
+	"github.com/miie/msjuvi/logger"
+	"strings"
+	"sync"
 )
 
 type RunVars struct {
-	TstInt	int
-	TstStr	string
-	TstBool	bool
+	TstInt  int
+	TstStr  string
+	TstBool bool
 }
 
 type Vars struct {
-	strvalues 	map[string]string
-	intvalues 	map[string]int
-	boolvalues 	map[string]bool
+	strvalues  map[string]string
+	intvalues  map[string]int
+	boolvalues map[string]bool
 	sync.Mutex
 }
 
@@ -99,33 +99,33 @@ func setvar(option *string, section *string, f *goconfig.ConfigFile) {
 		logger.LogWarning("found more than one | in option, please user <optionname|type[int,str,bool]=variable>. option: ", *option)
 	} else if lentyped == 2 {
 		switch typed[1] {
-			case "str":
-				s, err := f.GetString(*section, *option)
-				if err != nil {
-					logger.LogWarning("error when getting string for section & option: ", *section, *option)
-				}
-				SetVarsString(*section + ":" + typed[0], s)
-			case "int":
-				i, err := f.GetInt64(*section, *option)
-				if err != nil {
-					logger.LogWarning("error when getting \"int string\" for section & option: ", *section, *option)
-				}
-				SetVarsInteger(*section + ":" + typed[0], int(i))
-			case "bool":
-				b, err := f.GetBool(*section, *option)
-				if err != nil {
-					logger.LogWarning("error when getting \"bool string\" for section & option: ", *section, *option)
-				}
-				SetVarsBoolean(*section + ":" + typed[0], b)
-			default:
-				logger.LogWarning("error, got typed option with unknown type. section & option: ", *section, *option)
+		case "str":
+			s, err := f.GetString(*section, *option)
+			if err != nil {
+				logger.LogWarning("error when getting string for section & option: ", *section, *option)
+			}
+			SetVarsString(*section+":"+typed[0], s)
+		case "int":
+			i, err := f.GetInt64(*section, *option)
+			if err != nil {
+				logger.LogWarning("error when getting \"int string\" for section & option: ", *section, *option)
+			}
+			SetVarsInteger(*section+":"+typed[0], int(i))
+		case "bool":
+			b, err := f.GetBool(*section, *option)
+			if err != nil {
+				logger.LogWarning("error when getting \"bool string\" for section & option: ", *section, *option)
+			}
+			SetVarsBoolean(*section+":"+typed[0], b)
+		default:
+			logger.LogWarning("error, got typed option with unknown type. section & option: ", *section, *option)
 		}
 	} else {
 		s, err := f.GetString(*section, *option)
 		if err != nil {
 			logger.LogWarning("error when getting string for section & option: ", *section, *option)
 		}
-		SetVarsString(*section + ":" + typed[0], s)
+		SetVarsString(*section+":"+typed[0], s)
 	}
 }
 
